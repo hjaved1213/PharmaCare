@@ -32,6 +32,12 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// VERCEL FIX: Sirf local development mein app.listen chalega
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running on port ${PORT}`);
+    });
+}
+
+// VERCEL FIX: App ko export karna zaroori hai serverless environment ke liye
+export default app;
