@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../api/axiosConfig';
-import { ShoppingCart, Plus, Minus, Trash2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Trash2, CheckCircle, AlertCircle } from 'lucide-react';
 
 const POS = () => {
   const [medicines, setMedicines] = useState([]);
